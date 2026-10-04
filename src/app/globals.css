@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Cinzel', serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    
+    /* Institutional Color System */
+    --school-navy-950: #071526;
+    --school-navy-900: #0b223d;
+    --school-navy-800: #123359;
+    --school-navy-700: #1b4575;
+    --school-navy-600: #255994;
+    --school-navy-500: #306eb3;
+    
+    --school-gold-600: #996200;
+    --school-gold-500: #c28208;
+    --school-gold-400: #d97706;
+    --school-gold-300: #f59e0b;
+    --school-gold-200: #fbbf24;
+    --school-gold-100: #fef3c7;
+    --school-gold-50:  #fffbeb;
+
+    --school-emerald-700: #046c4e;
+    --school-emerald-600: #057a55;
+    --school-emerald-500: #10b981;
+
+    --school-maroon-800: #701a1e;
+    --school-maroon-700: #881337;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #1e293b;
+    background-color: #f8fafc;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.glass-navy {
+  background: rgba(11, 34, 61, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Golden Gradient Text */
+.gold-gradient-text {
+  background: linear-[#fef3c7, #f59e0b, #d97706];
+  background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #b45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    #f1f5f9 25%,
+    #e2e8f0 37%,
+    #f1f5f9 63%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite ease-in-out;
+}
